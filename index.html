@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My SuperHero Power Cards</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1a237e;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        p {
+            color: white;
+        }
+
+        button {
+            background-color: powderblue;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .hero-card {
+            background-color: navajowhite;
+            border: 3px solid darkviolet;
+            border-radius: 12px;
+            width: 220px;
+            padding: 18px;
+        }
+
+        .hero-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: darkgoldenrod;
+        }
+
+        .hero-power {
+            color: darkgreen;
+            font-weight: bold;
+        }
+
+        .hero-mission {
+            color: chocolate;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> My Super Hero Power Cards</h1>
+    <p>Click the button to create superhero objects using JavaScript classes.</p>
+    <button onclick="showHeroes()">Show Superheroes</button>
+    <div class="card-container" id="heroCards"></div>
+
+    <script>
+        class Superhero {
+            constructor(name, power, mission) {
+                this.name = name;
+                this.power = power;
+                this.mission = mission;
+            }
+
+            describeHero() {
+                return "<div class='hero-card'>" +
+                    "<p class='hero-name'>" + this.name + "</p>" +
+                    "<p class='hero-power'>Power: " + this.power + "</p>" +
+                    "<p class='hero-mission'>Mission: " + this.mission + "</p>" +
+                    "</div>";
+
+            }
+        }
+        function showHeroes() {
+            let hero1 = new Superhero(
+                "Iron Man",
+                "Advanced Technology & Flight",
+                "Builds Powerful suits to protect the world and defend Earth from threats."
+            );
+
+            let hero2 = new Superhero(
+                "Captain America",
+                "Super strenght & Unbreakable Shield",
+                "Fights for Justice and leads the team with courage and honor."
+            );
+
+            let hero3 = new Superhero(
+                "Thor",
+                "God of Thunder & Mjolnir",
+                "Controls lightning and defends the Nine Realms with his mighty hammer."
+            );
+
+            let hero4 = new Superhero(
+                "Black Panther",
+                "Enhanced Strength & Vibranium Suit",
+                "Protects Wakanda and its people with courage and skill."
+            );
+
+            let hero5 = new Superhero(
+                "Hulk",
+                "Super Strenght and Invulnerability",
+                "Transforms into a powerful green giant when angered and protects the innocent."
+            );
+
+            let hero6 = new Superhero(
+                "Scarlet Witch",
+                "Reality Manipulation & Telekinesis",
+                "Controls Chaos magic to alter reality and protect those she loves."
+            );
+
+            let hero7 = new Superhero(
+                "Doctor Strange",
+                "Master of Mysterical Arts",
+                "Defends the universe from magical threats using spells, portals, and the Time Stone."
+            );
+
+            document.getElementById("heroCards").innerHTML =
+                hero1.describeHero() +
+                hero2.describeHero() +
+                hero3.describeHero() +
+                hero4.describeHero() +
+                hero5.describeHero() +
+                hero6.describeHero() +
+                hero7.describeHero();
+        }
+    </script>
+</body>
+
+</html>
